@@ -1,0 +1,56 @@
+
+.buttonMain{
+    /*-fx-background-color:  #344E8C;*/
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+.buttonMain:hover{
+    -fx-background-color: blue;
+}
+
+
+.button1{
+    -fx-background-color:  #344E8C;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-cursor: hand;
+}
+.button1:hover{
+    -fx-background-color: blue;
+}
+
+
+.startBtn{
+    -fx-background-color:  #344E8C;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-cursor: hand;
+}
+.startBtn:hover{
+    -fx-background-color: blue;
+}
+
+
+.field{
+    -fx-background-color: #344E8C;
+    -fx-background-radius: 15;
+    -fx-border-width: 5;
+}
+
+.label{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-font-weight: bold;
+}
+
+.comboBox{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-prompt-text-fill: whitesmoke;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}

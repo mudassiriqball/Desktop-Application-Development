@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1205.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EasyLevel.EasyGame">
+   <top>
+      <Label alignment="CENTER" prefHeight="80.0" prefWidth="1570.0" style="-fx-background-color: #344E8C; -fx-border-width: 5;" text="TIC_TAC_TOE GAME Easy Level" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bank Gothic Light BT" size="64.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="717.0" prefWidth="1277.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <children>
+            <AnchorPane fx:id="p1_dashBoard" layoutX="10.0" layoutY="11.0" prefHeight="700.0" prefWidth="300.0" styleClass="field" stylesheets="@Game.css" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="69.0" prefWidth="342.0" stylesheets="@Game.css" text="PLAYER_1" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="25.0" layoutY="60.0" prefHeight="584.0" prefWidth="362.0" style="-fx-background-color: #0080ff;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="80.0">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <children>
+                        <TextField fx:id="player_1" layoutX="70.0" layoutY="52.0" onKeyTyped="#handle_p1_textField" prefHeight="50.0" promptText="Enter Player_1 Name" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                        <JFXComboBox fx:id="player_1_ComboBox" focusColor="WHITE" layoutX="20.0" layoutY="153.0" onAction="#handle_P1_comboBox" prefHeight="54.0" prefWidth="246.0" promptText="   Select Your Sign" styleClass="comboBox" stylesheets="@Game.css" unFocusColor="WHITE" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0" />
+                        <Label fx:id="p1_Sign" alignment="CENTER" layoutX="117.0" layoutY="328.0" prefHeight="400.0" prefWidth="268.0" style="-fx-background-color: #344E8C; -fx-text-fill: white;" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="250.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </AnchorPane>
+            <AnchorPane fx:id="p2_dashBoard" layoutX="923.0" layoutY="11.0" prefHeight="700.0" prefWidth="300.0" styleClass="field" stylesheets="@Game.css" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="32.0" prefHeight="69.0" prefWidth="342.0" stylesheets="@Game.css" text="PLAYER_2" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="10.0" layoutY="36.0" prefHeight="584.0" prefWidth="362.0" style="-fx-background-color: #0080ff;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="80.0">
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </opaqueInsets>
+                     <children>
+                        <TextField fx:id="player_2" layoutX="86.0" layoutY="65.0" onKeyTyped="#handle_p2_textField" prefHeight="50.0" promptText="Enter Player_2 Name" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font name="Times New Roman Bold" size="24.0" />
+                           </font>
+                        </TextField>
+                        <JFXComboBox fx:id="player_2_ComboBox" focusColor="WHITE" layoutX="26.0" layoutY="157.0" onAction="#handle_P2_comboBox" prefHeight="54.0" prefWidth="246.0" promptText="   Select Your Sign" styleClass="comboBox" stylesheets="@Game.css" unFocusColor="WHITE" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0" />
+                        <Label fx:id="p2_Sign" alignment="CENTER" layoutX="76.0" layoutY="227.0" prefHeight="400.0" prefWidth="268.0" style="-fx-background-color: #344E8C; -fx-text-fill: white;" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                           <font>
+                              <Font size="250.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="gridPane" focusTraversable="true" hgap="7.0" layoutX="315.0" layoutY="100.0" prefHeight="490.0" prefWidth="566.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" vgap="7.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Button fx:id="button1" defaultButton="true" mnemonicParsing="false" onAction="#handle_Button1" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " />
+                  <Button fx:id="button2" defaultButton="true" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_Button2" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="1" />
+                  <Button fx:id="button3" defaultButton="true" layoutX="205.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_Button3" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="2" />
+                  <Button fx:id="button4" defaultButton="true" layoutX="20.0" layoutY="364.0" mnemonicParsing="false" onAction="#handle_Button4" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.rowIndex="1" />
+                  <Button fx:id="button5" defaultButton="true" layoutX="389.0" layoutY="192.0" mnemonicParsing="false" onAction="#handle_Button5" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="button6" defaultButton="true" layoutX="20.0" layoutY="192.0" mnemonicParsing="false" onAction="#handle_Button6" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="button7" defaultButton="true" layoutX="205.0" layoutY="364.0" mnemonicParsing="false" onAction="#handle_Button7" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.rowIndex="2" />
+                  <Button fx:id="button8" defaultButton="true" layoutX="389.0" layoutY="364.0" mnemonicParsing="false" onAction="#handle_Button8" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="button9" defaultButton="true" layoutX="389.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_Button9" prefHeight="190.0" prefWidth="174.0" styleClass="buttonMain" stylesheets="@Game.css" text=" " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <AnchorPane layoutX="315.0" layoutY="585.0" prefHeight="83.0" prefWidth="566.0" style="-fx-background-color: #344E8C;" styleClass="field" stylesheets="@Game.css" AnchorPane.bottomAnchor="5.0">
+               <children>
+                  <Label fx:id="winner" alignment="CENTER" layoutX="7.0" layoutY="56.0" prefHeight="68.0" prefWidth="169.0" style="-fx-background-color: green; -fx-background-radius: 10;" stylesheets="@Game.css" text="Winner:" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="winnerAnounce" alignment="CENTER" layoutX="188.0" layoutY="3.0" prefHeight="69.0" prefWidth="381.0" style="-fx-background-color: green; -fx-background-radius: 10;" stylesheets="@Game.css" text="Winner:" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="drawLabel" alignment="CENTER" layoutX="27.0" layoutY="-24.0" prefHeight="87.0" prefWidth="566.0" style="-fx-background-color: red;" stylesheets="@Game.css" text="Match Draw" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label fx:id="playerTurn" alignment="CENTER" layoutX="315.0" layoutY="9.0" prefHeight="87.0" prefWidth="566.0" style="-fx-background-color: #344E8C;" stylesheets="@Game.css" text="EASY  LEVEL">
+               <font>
+                  <Font name="Times New Roman Bold" size="48.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="restartGridPane" hgap="5.0" layoutX="315.0" layoutY="593.0" prefHeight="66.0" prefWidth="566.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_endGameBtn" prefHeight="57.0" prefWidth="280.0" styleClass="button1" stylesheets="@Game.css" text="End Game" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_restartGameBtn" prefHeight="57.0" prefWidth="280.0" styleClass="button1" stylesheets="@Game.css" text="Restart Game" textFill="WHITE">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+            <AnchorPane fx:id="startBtnPane" layoutX="315.0" layoutY="100.0" prefHeight="490.0" prefWidth="566.0" style="-fx-border-width: 5; -fx-border-color: #344E8C;">
+               <children>
+                  <Button layoutX="45.0" layoutY="150.0" mnemonicParsing="false" onAction="#handle_startGameBtn" prefHeight="198.0" prefWidth="478.0" styleClass="startBtn" stylesheets="@Game.css" text="Start Game" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="64.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button layoutX="13.0" layoutY="672.0" mnemonicParsing="false" onAction="#handle_GoBackButton" prefHeight="35.0" prefWidth="280.0" styleClass="button1" stylesheets="@Game.css" text="Go Back...???" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0">
+               <font>
+                  <Font name="Bank Gothic Medium BT" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="921.0" layoutY="651.0" mnemonicParsing="false" onAction="#handle_NextLevelButton" prefHeight="35.0" prefWidth="280.0" styleClass="button1" stylesheets="@Game.css" text="Next Level...???" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <font>
+                  <Font name="Bank Gothic Medium BT" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

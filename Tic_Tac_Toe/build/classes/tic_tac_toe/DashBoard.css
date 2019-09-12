@@ -1,0 +1,15 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.button:hover{
+    -fx-background-color: blue;
+    -fx-cursor: hand;
+}
+
+.button{
+    -fx-background-color: blue;
+    -fx-background-color: green;
+    -fx-border-radious: 80;
+    -fx-background-radius: 80;
+}
