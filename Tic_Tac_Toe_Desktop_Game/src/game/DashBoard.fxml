@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: lightblue;" stylesheets="@DashBoard.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.DashBoard">
+   <top>
+      <Label alignment="CENTER" prefHeight="80.0" prefWidth="1650.0" style="-fx-background-color: #344E8C; -fx-border-width: 5;" text="TIC TAC TOE GAME" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bank Gothic Light BT" size="64.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="717.0" prefWidth="1277.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <children>
+            <Label fx:id="dashBoardLabel" alignment="CENTER" layoutX="316.0" layoutY="9.0" prefHeight="97.0" prefWidth="642.0" style="-fx-background-color: lightgreen; -fx-border-color: #344E8C; -fx-border-width: 5;" stylesheets="@../../../Tic_Tac_Toe/src/tic_tac_toe/Game.css" text="GAME DASHBOARD" textFill="GREEN" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="firstDashBoard" layoutX="316.0" layoutY="111.0" prefHeight="587.0" prefWidth="642.0" style="-fx-border-width: 5; -fx-border-color: #344E8C; -fx-background-color: lightgreen;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="105.0">
+               <children>
+                  <HBox layoutX="20.0" layoutY="450.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handle_EasyLevel" prefHeight="50.0" prefWidth="200.0" styleClass="button1" text="Easy" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Easy Level">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handle_NormalLevel" prefHeight="50.0" prefWidth="200.0" styleClass="button1" text="Normal" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Normal Level">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handle_HardLevel" prefHeight="50.0" prefWidth="200.0" styleClass="button1" text="Hard" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Hard Level">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <JFXTextField fx:id="player1" layoutX="214.0" layoutY="55.0" onAction="#handle_p1Name" prefHeight="50.0" prefWidth="334.0" promptText="    Enter Player_1 Name" unFocusColor="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="50.0" layoutY="65.0" text="Playe_1:" textFill="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="player2" layoutX="214.0" layoutY="246.0" onAction="#handle_p2Name" prefHeight="50.0" prefWidth="334.0" promptText="    Enter Player_2 Name" unFocusColor="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label layoutX="50.0" layoutY="256.0" text="Playe_2:" textFill="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXColorPicker fx:id="player1Color" layoutX="215.0" layoutY="120.0" onAction="#handle_p1Color" prefHeight="56.0" prefWidth="334.0" promptText="Choose Your Color" styleClass="colorPicker" stylesheets="@DashBoard.css">
+                     <tooltip>
+                        <Tooltip autoHide="true" contentDisplay="CENTER" text="Choose the colour.">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></JFXColorPicker>
+                  <Label layoutX="50.0" layoutY="122.0" text="Color:" textFill="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <JFXColorPicker fx:id="player2Color" layoutX="215.0" layoutY="311.0" onAction="#handle_p2Color" prefHeight="56.0" prefWidth="334.0" promptText="Choose Your Color" styleClass="colorPicker" stylesheets="@DashBoard.css">
+                     <tooltip>
+                        <Tooltip autoHide="true" contentDisplay="CENTER" text="Choose the colour.">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></JFXColorPicker>
+                  <Label layoutX="50.0" layoutY="313.0" text="Color:" textFill="GREEN">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="20.0" layoutY="513.0" mnemonicParsing="false" onAction="#handle_ExitGame" prefHeight="50.0" prefWidth="600.0" styleClass="button1" text="Exit Game" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="30.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip autoHide="true" contentDisplay="CENTER" text="Easy Level">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="musicPane" layoutX="656.0" layoutY="15.0" prefHeight="686.0" prefWidth="599.0" style="-fx-border-width: 5; -fx-border-color: #344E8C; -fx-background-color: lightgreen;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="310.0" fitWidth="550.0" layoutX="24.0" layoutY="26.0" />
+                  <JFXToggleButton fx:id="sound" layoutX="7.0" layoutY="316.0" onAction="#handle_sound" prefHeight="116.0" prefWidth="212.0" size="15.0" text="Mute" textFill="GREEN" toggleColor="RED" toggleLineColor="#9c9696" unToggleColor="GREEN" unToggleLineColor="WHITE">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </JFXToggleButton>
+                  <RadioButton fx:id="english" layoutX="335.0" layoutY="511.0" mnemonicParsing="false" onAction="#englishSong" text="English Song" textFill="GREEN" AnchorPane.rightAnchor="40.0">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="urdu" layoutX="48.0" layoutY="511.0" mnemonicParsing="false" onAction="#urduSong" text="Urdu Song" textFill="GREEN" AnchorPane.leftAnchor="40.0">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="punjabi" layoutX="335.0" layoutY="596.0" mnemonicParsing="false" onAction="#punjabiSong" text="Punjabi Song" textFill="GREEN" AnchorPane.rightAnchor="40.0">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rap" layoutX="48.0" layoutY="596.0" mnemonicParsing="false" onAction="#rapSong" text="Rap Song" textFill="GREEN" AnchorPane.leftAnchor="40.0">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </RadioButton>
+                  <JFXToggleButton fx:id="stopResume" layoutX="175.0" layoutY="316.0" onAction="#handle_stopResume" prefHeight="116.0" prefWidth="227.0" size="15.0" text="Pause" textFill="GREEN" toggleColor="RED" toggleLineColor="#9c9696" unToggleColor="GREEN" unToggleLineColor="WHITE">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </JFXToggleButton>
+                  <JFXToggleButton fx:id="changSong" layoutX="348.0" layoutY="315.0" onAction="#handle_changSong" prefHeight="116.0" prefWidth="242.0" size="15.0" text="Chang" textFill="GREEN" toggleColor="GREEN" toggleLineColor="WHITE" unToggleColor="GREEN" unToggleLineColor="WHITE">
+                     <font>
+                        <Font name="Bank Gothic Medium BT" size="24.0" />
+                     </font>
+                  </JFXToggleButton>
+                  <Button fx:id="goBackToGame" layoutX="48.0" layoutY="416.0" mnemonicParsing="false" onAction="#handle_goBackToGame" prefHeight="67.0" prefWidth="508.0" styleClass="button1" text="Go back to Game" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="36.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="secondDashBoard" prefHeight="686.0" prefWidth="555.0" style="-fx-background-color: #34438c;" styleClass="field" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="342.0" style="-fx-background-color: green;" text="PLAYER_1" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="5.0" layoutY="162.0" prefHeight="50.0" prefWidth="342.0" style="-fx-background-color: green;" text="PLAYER_2" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font name="Bank Gothic Light BT" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="p1_Label" alignment="CENTER" layoutX="5.0" layoutY="61.0" prefHeight="70.0" prefWidth="556.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="72.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="p2_Label" alignment="CENTER" layoutX="5.0" layoutY="218.0" prefHeight="70.0" prefWidth="556.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="72.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="144.0" layoutY="522.0" prefHeight="62.0" prefWidth="545.0" spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handle_setMusic" prefHeight="50.0" prefWidth="300.0" styleClass="button1" text="Set Music" textFill="WHITE">
+                           <font>
+                              <Font name="Bank Gothic Medium BT" size="24.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Change Music or Setup the Sounds">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle_goBack" prefHeight="50.0" prefWidth="300.0" styleClass="button1" text="Go Back" textFill="WHITE">
+                           <font>
+                              <Font name="Bank Gothic Medium BT" size="24.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Go Back to Game Main Window">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                        <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleRestartGame" prefHeight="50.0" prefWidth="300.0" styleClass="button1" text="Restart" textFill="WHITE">
+                           <font>
+                              <Font name="Bank Gothic Medium BT" size="24.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" contentDisplay="CENTER" text="Restart the Game">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <AnchorPane fx:id="winnerPane" layoutX="5.0" layoutY="5.0" prefHeight="282.0" prefWidth="555.0" style="-fx-background-color: #33438c;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="winnerLabel" alignment="CENTER" prefHeight="110.0" prefWidth="545.0" style="-fx-background-color: green;" text="Winner" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                           <font>
+                              <Font name="Bank Gothic Light BT" size="64.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="winnerColor" alignment="CENTER" layoutX="5.0" layoutY="121.0" prefHeight="188.0" prefWidth="545.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="72.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <MediaView fx:id="smal_mediaView" fitHeight="320.0" fitWidth="545.0" layoutX="5.0" layoutY="313.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.2000000000000455" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </AnchorPane>
+            <GridPane fx:id="easylGamePanel" focusTraversable="true" hgap="10.0" layoutX="580.0" layoutY="20.0" prefHeight="685.0" prefWidth="690.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" vgap="10.0" visible="false" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="easyButton1" defaultButton="true" layoutX="15.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_easyButton1" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton2" defaultButton="true" layoutX="154.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_easyButton2" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton3" defaultButton="true" layoutX="293.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_easyButton3" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton4" defaultButton="true" layoutX="15.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_easyButton4" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton5" defaultButton="true" layoutX="154.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_easyButton5" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton6" defaultButton="true" layoutX="293.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_easyButton6" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton7" defaultButton="true" layoutX="15.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_easyButton7" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton8" defaultButton="true" layoutX="154.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_easyButton8" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="easyButton9" defaultButton="true" layoutX="293.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_easyButton9" prefHeight="240.0" prefWidth="240.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </GridPane>
+            <GridPane fx:id="normalGamePanel" focusTraversable="true" hgap="7.0" layoutY="5.0" prefHeight="685.0" prefWidth="690.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" vgap="7.0" visible="false" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="button1" defaultButton="true" layoutX="154.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_button1" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button2" defaultButton="true" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_button2" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button3" defaultButton="true" layoutX="154.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_button3" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button4" defaultButton="true" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_button4" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button5" defaultButton="true" mnemonicParsing="false" onAction="#handle_button5" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button6" defaultButton="true" layoutX="15.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_button6" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button7" defaultButton="true" layoutX="154.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_button7" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button8" defaultButton="true" layoutX="293.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_button8" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button9" defaultButton="true" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_button9" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button10" defaultButton="true" layoutX="15.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_button10" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button11" defaultButton="true" layoutX="154.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_button11" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button12" defaultButton="true" layoutX="293.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_button12" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button13" defaultButton="true" layoutX="432.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_button13" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button14" defaultButton="true" layoutX="15.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_button14" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button15" defaultButton="true" layoutX="154.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_button15" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button16" defaultButton="true" layoutX="293.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_button16" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </GridPane>
+            <GridPane fx:id="hardGamePanel" focusTraversable="true" hgap="5.0" layoutX="590.0" layoutY="30.0" prefHeight="685.0" prefWidth="690.0" style="-fx-border-color: #344E8C; -fx-border-width: 5;" vgap="5.0" visible="false" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="hardButton1" layoutX="154.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_hardButton1" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton2" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_hardButton2" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton3" layoutX="154.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_hardButton3" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton4" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle_hardButton4" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton6" mnemonicParsing="false" onAction="#handle_hardButton6" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton7" layoutX="15.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_hardButton7" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton8" layoutX="154.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_hardButton8" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton9" layoutX="293.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_hardButton9" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton11" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" onAction="#handle_hardButton11" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton12" layoutX="15.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_hardButton12" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton13" layoutX="154.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_hardButton13" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton14" layoutX="293.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_hardButton14" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton16" layoutX="432.0" layoutY="256.0" mnemonicParsing="false" onAction="#handle_hardButton16" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton17" layoutX="15.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_hardButton17" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton18" layoutX="154.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_hardButton18" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton19" layoutX="293.0" layoutY="376.0" mnemonicParsing="false" onAction="#handle_hardButton19" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton5" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_hardButton5" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton21" layoutX="565.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_hardButton21" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton10" layoutX="565.0" layoutY="20.0" mnemonicParsing="false" onAction="#handle_hardButton10" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton15" layoutX="565.0" layoutY="156.0" mnemonicParsing="false" onAction="#handle_hardButton15" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton20" layoutX="565.0" layoutY="292.0" mnemonicParsing="false" onAction="#handle_hardButton20" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton22" layoutX="565.0" layoutY="428.0" mnemonicParsing="false" onAction="#handle_hardButton22" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton23" layoutX="157.0" layoutY="564.0" mnemonicParsing="false" onAction="#handle_hardButton23" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton24" layoutX="293.0" layoutY="564.0" mnemonicParsing="false" onAction="#handle_hardButton24" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="hardButton25" layoutX="430.0" layoutY="564.0" mnemonicParsing="false" onAction="#handle_hardButton25" prefHeight="190.0" prefWidth="190.0" styleClass="Gamebutton" stylesheets="@DashBoard.css" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

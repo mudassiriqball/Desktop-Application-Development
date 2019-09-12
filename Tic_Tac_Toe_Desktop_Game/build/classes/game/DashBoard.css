@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.Gamebutton:hover{
+    -fx-background-color: blue;
+    -fx-cursor: hand;
+}
+
+.Gamebutton{
+    -fx-background-color: white;
+    -fx-border-radious: 40;
+    -fx-background-radius: 40;
+}
+.button1:hover{
+    -fx-background-color: blue;
+    -fx-cursor: hand;
+}
+
+.button1{
+    -fx-background-color: green;
+    -fx-border-radious: 80;
+    -fx-background-radius: 80;
+}
+.colorPicker{
+    -fx-pref-height: 50;
+    -fx-pref-width: 334;
+}
